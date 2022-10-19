@@ -3,7 +3,8 @@ const { values, setFieldValue } = useFormikContext<{
     filters: { [index: string]: string[] };
   }>();
  
-  
+ //---
+
   const onChange = useCallback(
  (e: ChangeEvent<Record<string, unknown>>, checked: boolean) => {
    setFieldValue(e.target.name as string, checked);
@@ -11,5 +12,9 @@ const { values, setFieldValue } = useFormikContext<{
  [setFieldValue],
 );
 
+
+// --- 
 type Ref<T> = RefCallback<T> | RefObject<T> | null
+
+const ref = useRef<HTMLDivElement>(null);
 
