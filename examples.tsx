@@ -18,3 +18,8 @@ type Ref<T> = RefCallback<T> | RefObject<T> | null
 
 const ref = useRef<HTMLDivElement>(null);
 
+  children(
+    props: {
+      formError: null | string;
+      onSetShouldClose: Dispatch<SetStateAction<boolean>>;
+    } & FormikProps<Values>,
