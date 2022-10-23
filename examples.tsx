@@ -31,3 +31,10 @@ const ref = useRef<HTMLDivElement>(null);
       payload: { [event.target.name]: event.target.value },
     });
   };
+
+  const handleBlur = (event: FocusEvent<HTMLInputElement>) => {
+    dispatch({
+      type: 'SET_FIELD_TOUCHED',
+      payload: { [event.target.name]: true },
+    });
+  };
