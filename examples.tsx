@@ -38,3 +38,12 @@ const ref = useRef<HTMLDivElement>(null);
       payload: { [event.target.name]: true },
     });
   };
+
+
+const FormComponent = () => {
+  const handleFormEvent = (e: FormEvent<HTMLFormElement>) => {
+    // Do something
+  };
+
+  return <form onSubmit={handleFormEvent}>{/** Some JSX */}</form>;
+};
