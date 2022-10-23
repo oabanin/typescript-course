@@ -23,3 +23,11 @@ const ref = useRef<HTMLDivElement>(null);
       formError: null | string;
       onSetShouldClose: Dispatch<SetStateAction<boolean>>;
     } & FormikProps<Values>,
+
+      
+ const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    dispatch({
+      type: 'SET_FIELD_VALUE',
+      payload: { [event.target.name]: event.target.value },
+    });
+  };
