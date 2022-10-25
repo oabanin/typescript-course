@@ -9,7 +9,7 @@ const ref = useRef<HTMLDivElement>(null);
 const Button = ({ onClick: handleClick, children }: Props) => (
   <button onClick={handleClick}>{children}</button>
 )
-
+React.SyntheticEvent - UNIVERSAL
 
   onChange = (e: React.FormEvent<HTMLInputElement>): void => {
     this.setState({ text: e.currentTarget.value });
