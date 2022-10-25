@@ -14,6 +14,10 @@ const Button = ({ onClick: handleClick, children }: Props) => (
   onChange = (e: React.FormEvent<HTMLInputElement>): void => {
     this.setState({ text: e.currentTarget.value });
   };
+  // OR
+  onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    this.setState({text: e.currentTarget.value})
+  }
 
  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
   };
