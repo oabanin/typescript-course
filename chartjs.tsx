@@ -37,6 +37,25 @@ const plugin = [
     },
   ];
 
+   Chart.pluginService.register({
+      id: 'dropShadow',
+      afterDraw: function (chart, easing) {
+        console.log(chart);
+        let originial = this;
+        const { ctx } = chart;
+        let originalStroke = ctx.stroke;
+        ctx.stroke = function () {
+          ctx.save();
+          ctx.shadowColor = '#C4A4BF';
+          ctx.shadowBlur = 7;
+          ctx.shadowOffsetX = 0;
+          ctx.shadowOffsetY = 0;
+          originalStroke.apply(this, arguments)
+          ctx.restore();
+        }
+      }
+    });
+
   const chartRefContainer = useRef<HTMLDivElement>(null);
   const { dataWithGradient } = useHorizontalBarChartGradient({ data: barData, ref: chartRef });
   return (
