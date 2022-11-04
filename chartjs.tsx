@@ -100,15 +100,14 @@ const plugin = [
     };
 
 
-
-    var ctx = chart.ctx;
-    let _fill = ctx.fill;
-    ctx.fill = function () {
+      
+    ctx.stroke = function () {
       ctx.save();
-      ctx.shadowColor = 'blue';
-      ctx.shadowBlur = 5;
-      ctx.shadowOffsetX = 0;
-      ctx.shadowOffsetY = 0;
-      _fill.apply(this, arguments);
+      ctx.shadowColor = '#000';
+      ctx.shadowBlur = 10;
+      ctx.shadowOffsetX = 8;
+      ctx.shadowOffsetY = 8;
+      originalStroke.apply(this, arguments);
       ctx.restore();
+    };
     };
