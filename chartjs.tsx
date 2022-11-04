@@ -17,6 +17,16 @@ const plugin = [
     },
   ];
 
+
+  beforeInit(chart) {
+    const state = {};
+    state.options = new Map();
+    chartStates.set(chart, state);
+
+    // var originalStroke = ctx.stroke;
+    // let ctx = this.chart.chart.ctx;
+      
+      
   const plugins = [
     {
       beforeDraw: function (chart) {
@@ -70,3 +80,35 @@ const plugin = [
       />
     </div>
   );
+
+
+
+///---
+
+--- CHART BARS
+
+    var ctx = chart.ctx;
+    let _fill = ctx.fill;
+    ctx.fill = function () {
+      ctx.save();
+      ctx.shadowColor = 'blue';
+      ctx.shadowBlur = 5;
+      ctx.shadowOffsetX = 0;
+      ctx.shadowOffsetY = 0;
+      _fill.apply(this, arguments);
+      ctx.restore();
+    };
+
+
+
+    var ctx = chart.ctx;
+    let _fill = ctx.fill;
+    ctx.fill = function () {
+      ctx.save();
+      ctx.shadowColor = 'blue';
+      ctx.shadowBlur = 5;
+      ctx.shadowOffsetX = 0;
+      ctx.shadowOffsetY = 0;
+      _fill.apply(this, arguments);
+      ctx.restore();
+    };
