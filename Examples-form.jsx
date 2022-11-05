@@ -57,3 +57,8 @@ export declare interface AppProps {
     // etc...
   }}
 >
+
+ 
+   const changeHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    setValue(event.target.value)
+  }
