@@ -33,6 +33,11 @@ const FormComponent = () => {
   return <form onSubmit={handleFormEvent}></form>;
 };
 
+  onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    this.setState({text: e.currentTarget.value})
+  }
+
+
 
 export declare interface AppProps {
   children?: React.ReactNode; // best, accepts everything React can render
